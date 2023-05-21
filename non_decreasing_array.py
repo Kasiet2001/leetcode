@@ -5,9 +5,9 @@ def checkPossibility(nums):
             count += 1
             if count > 1:
                 return False
-        if i < 2 or nums[i] >= nums[i - 1]:
-            nums[i - 1] = nums[i]
-        else:
-            nums[i] = nums[i - 1]
+            if i < 2 or nums[i] >= nums[i - 2]:
+                nums[i - 1] = nums[i]
+            else:
+                nums[i] = nums[i - 1]
     return True
 print(checkPossibility([4,2,1]))
