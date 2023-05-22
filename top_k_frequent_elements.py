@@ -1,8 +1,12 @@
+from collections import Counter
+import heapq
 def topKFrequent(nums, k):
-    elem = {}
-    sorted_dict = {}
-    for i in set(nums):
-        elem[i] = nums.count(i)
-    sorted_keys = sorted(elem, key=elem.get, reverse=True)
-    return sorted_keys[:k]
+    ans = []
+    d = Counter(nums)
+    n = [(-v, k) for k, v in d.items()]
+    heapq.heapify(n)
+    for i in range(k):
+        elem = heapq.heappop(n)
+        ans.append(elem[1])
+    return ans
 print(topKFrequent([1,1,1,2,2,3], 2))
