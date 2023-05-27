@@ -5,9 +5,9 @@ def longestPalindrome(s):
     d = Counter(s)
     for i in d.values():
         if i % 2 == 1:
-            mid += 1
+            mid = 1
             ans += i - 1
         else:
             ans += i
-    return ans if mid == 0 else ans + 1
+    return ans + mid
 print(longestPalindrome('a'))
