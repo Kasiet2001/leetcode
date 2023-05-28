@@ -1,4 +1,3 @@
-import heapq
 def miceAndCheese(reward1, reward2, k):
     diff = {i: reward1[i] - reward2[i] for i in range(len(reward1))}
     ans = 0
