@@ -9,4 +9,4 @@ def maxArea(height):
         elif height[right] < height[left]:
             right -= 1
     return ans
-print(maxArea([1,1]))
+print(maxArea([1,1])) 
