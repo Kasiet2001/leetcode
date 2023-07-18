@@ -1,7 +1,7 @@
 from collections import Counter
 def minimumIndex(nums):
     n = len(nums)
-    d, right= Counter(nums).most_common()[0]
+    d, right = Counter(nums).most_common()[0]
     left = 0
     for i in range(n):
         if nums[i] == d:
