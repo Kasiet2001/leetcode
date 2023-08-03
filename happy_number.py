@@ -11,3 +11,6 @@ def isHappy(n):
         end_num, n = 0, end_num
     return n == 1
 print(isHappy(4))
+
+
+
