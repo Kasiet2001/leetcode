@@ -3,7 +3,7 @@ def finalString(s):
     for i in s:
         if i == 'i':
             res.reverse()
-        else:
+        else: 
             res += i
     return ''.join(res)
 print(finalString("string"))
