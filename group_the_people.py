@@ -1,7 +1,12 @@
 def groupThePeople(groupSizes):
-    from collections import defaultdict
-    c = defaultdict(list)
-    for k, v in enumerate(groupSizes):
-        c[v].append(k)
-    return [l[i:i + s] for s, l in c.items() for i in range(0, len(l), s)]
+    groups = {}
+    ans = []
+    for i, size in enumerate(groupSizes):
+        if size not in groups:
+            groups[size] = []
+        groups[size].append(i)
+        if len(groups[size]) == size:
+            ans.append(groups[size])
+            groups[size] = []
+    return ans
 print(groupThePeople([3,3,3,3,3,1,3]))
