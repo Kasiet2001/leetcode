@@ -1,13 +1,7 @@
 def kWeakestRows(mat, k):
-    rows = []
-    m = sorted(mat)[:k]
-    for i in range(k):
-        for j in range(len(mat)):
-            if m[i] == mat[j] and j not in rows and len(rows) != k:
-                rows.append(j)
-            else:
-                continue
-    return rows
+    r = [(sum(row), i) for i, row in enumerate(mat)]
+    rows = sorted(r, key=lambda x: x[0])
+    return [rows[i][1] for i in range(k)]
 print(kWeakestRows([[1,1,0,0,0],
  [1,1,1,1,0],
  [1,0,0,0,0],
