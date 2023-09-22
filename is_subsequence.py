@@ -1,10 +1,8 @@
 def isSubsequence(s, t):
-    if len(s) > len(t):
-        return False
-    ind = 0
-    for i in range(len(t)):
-        if ind <= len(s) - 1:
-            if s[ind] == t[i]:
-                ind += 1
-    return len(s) == ind
+    ind_s = ind_t = 0
+    while ind_s < len(s) and ind_t < len(t):
+        if s[ind_s] == t[ind_t]:
+            ind_s += 1
+        ind_t += 1
+    return ind_s == len(s)
 print(isSubsequence("b", "abc"))
