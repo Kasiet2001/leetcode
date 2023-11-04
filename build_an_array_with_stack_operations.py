@@ -1,4 +1,4 @@
-def buildArray(self, target: List[int], n: int) -> List[str]:
+def buildArray(target, n):
     ans = []
     for i in range(1, n + 1):
         if i > target[-1]:
