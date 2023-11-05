@@ -4,4 +4,4 @@ def getLastMoment(n, left, right):
         ans = max(ans, i)
     for j in right:
         ans = max(ans, abs(n - j))
-    return ans
+    return ans 
