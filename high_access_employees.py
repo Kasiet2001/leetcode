@@ -9,7 +9,7 @@ def findHighAccessEmployees(access_times):
             v.sort()
             for i in range(2, len(v)):
                 if v[i] - v[i - 2] < 60:
-                    if k not in ans:
-                        ans.append(k)
+                    ans.append(k)
+                    break
     return ans
 print(findHighAccessEmployees([["cd","1025"],["ab","1025"],["cd","1046"],["cd","1055"],["ab","1124"],["ab","1120"]]))
