@@ -8,4 +8,4 @@ def garbageCollection(garbage, travel):
                 k = j
         t += sum(travel[:k])
     return t
-print(garbageCollection(["MMM","PGM","GP"], [3,10]))
+print(garbageCollection(["G","P","GP","GG"], [2,4,3]))
