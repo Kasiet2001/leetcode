@@ -1,4 +1,3 @@
-from collections import defaultdict
 def maximumSetSize(nums1, nums2):
     n = len(nums1)
     n1 = set(nums1)
