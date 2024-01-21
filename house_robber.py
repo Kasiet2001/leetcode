@@ -11,4 +11,4 @@ def rob(nums):
     for i in range(2, count):
         m[i] = max(m[i - 1], nums[i] + m[i - 2])
     return m[count - 1]
-print(rob([2,7,9,3,1]))
+print(rob([1,3,1,3,100]))
