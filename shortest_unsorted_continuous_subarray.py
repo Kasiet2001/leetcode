@@ -16,7 +16,8 @@ def findUnsortedSubarray(nums):
     j = n - 1
     while j >= 0 and nums[j] >= mx:
         j -= 1
+
     return j - i + 1 if j - i > 0 else 0
-print(findUnsortedSubarray([1,2,2,3]))
+print(findUnsortedSubarray([1,2,2,1]))
 
 
