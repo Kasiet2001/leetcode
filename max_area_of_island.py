@@ -1,25 +1,19 @@
 def maxAreaOfIsland(grid):
-    if not grid:
-        return 0
-
     rows, cols = len(grid), len(grid[0])
-    max_area = 0
+    visited = set()
 
-    def dfs_explore(row, col, curr_area):
-        if row < 0 or col < 0 or row >= rows or col >= cols or grid[row][col] == 0:
-            return curr_area
+    def dfs(r, c):
+        if r < 0 or r == rows or c < 0 or c == cols or grid[r][c] == 0 or (r, c) in visited:
+            return 0
+        visited.add((r, c))
+        return (1 + dfs(r + 1, c) +
+                dfs(r - 1, c) +
+                dfs(r, c + 1) +
+                dfs(r, c - 1))
 
-        curr_area += grid[row][col]
-        grid[row][col] = 0
-
-        for dr, dc in [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]:
-            curr_area = dfs_explore(dr, dc, curr_area)
-        return curr_area
-
+    area = 0
     for r in range(rows):
         for c in range(cols):
-            if grid[r][c] != 0:
-                max_area = max(max_area, dfs_explore(r, c, 0))
-
-    return max_area
+            area = max(area, dfs(r, c))
+    return area
 print(maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]))
