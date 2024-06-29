@@ -3,9 +3,9 @@ def getAncestors(n, edges):
     adjacency_list = [[] for i in range(n)]
     for frm, to in edges:
         adjacency_list[to].append(frm)
-    ancestors_list = []
-    for i in range(n):
-        q = deque(adjacency_list[i])
+
+    def find_ancestors(curr):
+        q = deque(adjacency_list[curr])
         ancestors = []
         visited = set()
         while q:
@@ -14,6 +14,11 @@ def getAncestors(n, edges):
                 q.extend(adjacency_list[node])
                 ancestors.append(node)
                 visited.add(node)
-        ancestors_list.append(sorted(ancestors))
+        ancestors = sorted(ancestors)
+        return ancestors
+
+    ancestors_list = []
+    for i in range(n):
+        ancestors_list.append(find_ancestors(i))
     return ancestors_list
-print(getAncestors(5, [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]))
+print(getAncestors(8, [[0,3],[0,4],[1,3],[2,4],[2,7],[3,5],[3,6],[3,7],[4,6]]))
