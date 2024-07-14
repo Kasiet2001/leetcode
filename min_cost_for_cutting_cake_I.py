@@ -31,4 +31,4 @@ def minimumCost(m, n, horizontalCut, verticalCut):
 
     return ans
 
-print(minimumCost(3, 2, [1, 3], [5]))  # Output should be 13
+print(minimumCost(3, 2, [1, 3], [5])) 
