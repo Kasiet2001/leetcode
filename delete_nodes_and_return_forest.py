@@ -17,7 +17,7 @@ class Solution:
                     node.left = None
             if node.right:
                 nodes.append(node.right)
-                if node.left.val in delete:
+                if node.right.val in delete:
                     node.right = None
             if node.val in delete:
                 if node.left:
