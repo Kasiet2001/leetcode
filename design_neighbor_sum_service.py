@@ -12,7 +12,7 @@ class neighborSum:
     def adjacent_sum(self, value: int):
         row, col = self.find_value(value)
         if row is None or col is None:
-            return None  # Value not found
+            return None
 
         res = 0
         if row > 0:
