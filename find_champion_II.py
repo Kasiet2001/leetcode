@@ -5,4 +5,4 @@ def findChampion(n, edges):
             e.pop(w)
     ans = list(e.keys())
     return ans[0] if len(ans) == 1 else -1
-print(findChampion(1, []))
+print(findChampion(3, [[0,1],[1,2]]))
