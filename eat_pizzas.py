@@ -1,4 +1,3 @@
-from math import ceil
 def maxWeight(pizzas):
     pizzas.sort()
     days = len(pizzas) // 4
